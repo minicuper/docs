@@ -1,10 +1,12 @@
 # List usinnovation pods with tags
 
 Input:
+
 ```bash
 kubectl get pods -o json | jq '[.items[].spec.containers[].image | select(contains("innovation")) | .[25:]] | unique'
 ```
 Output:
+
 ```
 [
   "analytics-ui:1.2.45",
